@@ -29,7 +29,7 @@ function fetchRadioStations(server: string): Promise<any> {
     const url = `${server}/json/stations`;
 
     const options = {
-      rejectUnauthorized: false, // Ignore TLS certificate errors
+      rejectUnauthorized: true, // Enforce TLS certificate validation
     };
 
     https
