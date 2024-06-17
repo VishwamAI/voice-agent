@@ -1,0 +1,18 @@
+export declare const ALEXA_STRING_MAX_LENGTH = 8000;
+export declare const SSML_OFFSET: number;
+export declare const APL_GRADIENT_INPUT_RANGE_MIN = 0;
+export declare const APL_GRADIENT_INPUT_RANGE_MAX = 1;
+export declare const APL_GRADIENT_COLOR_RANGE_MIN_SIZE = 2;
+export declare const APL_LIST_MIN_SIZE = 2;
+export declare const APL_LIST_VERSION_MIN = 0;
+export declare const APL_INDEX_MIN = 0;
+export declare const APL_OPERATION_COUNT_MIN = 1;
+export declare const AUDIO_STREAM_TOKEN_MAX_LENGTH = 1024;
+export declare const BODY_TEMPLATE_MAIN_TEXT_MAX_LENGTH = 85;
+export declare const CARD_IMAGE_URL_MAX_LENGTH = 2000;
+export declare const DISPLAY_TEMPLATE_TITLE_MAX_LENGTH = 200;
+export declare const DISPLAY_TEMPLATE_ITEM_MAIN_TEXT_MAX_LENGTH = 84;
+export declare const HTML_CONFIGURATION_TIMEOUT_MIN = 1;
+export declare const HTML_CONFIGURATION_TIMEOUT_MAX = 300;
+export declare const LIST_TEMPLATE_MIN_SIZE = 1;
+export declare const SLOT_TYPE_VALUES_MAX_SIZE = 100;

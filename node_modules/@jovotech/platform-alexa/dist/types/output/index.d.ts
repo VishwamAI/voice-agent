@@ -1,0 +1,36 @@
+import { AplHeader, AplRenderDocumentDirective, Card as AlexaCard, CardType, NormalizedAlexaOutputTemplate, OutputSpeech } from './models';
+declare module '@jovotech/output/dist/types/models/Card' {
+    interface Card {
+        header?: AplHeader;
+        backgroundImageUrl?: string;
+        toAlexaCard?(): AlexaCard<CardType.Standard>;
+        toApl?(cardTemplate?: any): AplRenderDocumentDirective;
+    }
+}
+declare module '@jovotech/output/dist/types/models/Carousel' {
+    interface Carousel {
+        header?: AplHeader;
+        backgroundImageUrl?: string;
+        toApl?(carouselTemplate?: any): AplRenderDocumentDirective;
+    }
+}
+declare module '@jovotech/output/dist/types/models/Message' {
+    interface Message {
+        toAlexaOutputSpeech?(): OutputSpeech;
+    }
+}
+declare module '@jovotech/output/dist/types/models/NormalizedOutputTemplatePlatforms' {
+    interface NormalizedOutputTemplatePlatforms {
+        alexa?: NormalizedAlexaOutputTemplate;
+    }
+}
+export * from './decorators/validation/IsValidCardImage';
+export * from './decorators/validation/IsValidCardImageUrl';
+export * from './decorators/validation/IsValidCardString';
+export * from './decorators/validation/IsValidAlexaString';
+export * from './decorators/validation/IsValidOutputSpeechString';
+export * from './models';
+export * from './templates';
+export * from './constants';
+export * from './AlexaOutputTemplateConverterStrategy';
+export { validateAlexaString, convertMessageToOutputSpeech } from './utilities';
