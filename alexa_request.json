@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "session": {
+    "new": true,
+    "sessionId": "amzn1.echo-api.session.1234567890",
+    "application": {
+      "applicationId": "amzn1.ask.skill.1234567890"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.1234567890"
+    }
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.1234567890"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.1234567890"
+      },
+      "device": {
+        "deviceId": "amzn1.ask.device.1234567890",
+        "supportedInterfaces": {
+          "AudioPlayer": {}
+        }
+      },
+      "apiEndpoint": "https://api.amazonalexa.com",
+      "apiAccessToken": "1234567890"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.1234567890",
+    "timestamp": "2024-06-16T13:07:08Z",
+    "locale": "en-US",
+    "intent": {
+      "name": "PlayMusicIntent",
+      "confirmationStatus": "NONE",
+      "slots": {}
+    }
+  }
+}

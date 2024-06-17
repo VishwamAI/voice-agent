@@ -1,0 +1,9 @@
+Package: jarvis
+Version: 1.0.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: nodejs, npm
+Maintainer: Your Name <your.email@example.com>
+Description: Jarvis Voice Assistant
+ A personal voice assistant named Jarvis, developed using the Jovo Framework. It supports advanced voice recognition, command execution, and integration with various services without requiring API keys. The assistant supports multiple languages, with a focus on Telugu, and can control Google Chrome and Edge browsers.

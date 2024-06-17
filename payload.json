@@ -1,0 +1,35 @@
+{
+  "version": "4.0",
+  "session": {
+    "new": true,
+    "sessionId": "example-session",
+    "user": {
+      "id": "user-123"
+    },
+    "type": "JovoSession"
+  },
+  "context": {
+    "platform": "core",
+    "device": {
+      "type": "BROWSER"
+    },
+    "audio": {
+      "supported": true
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "intent": {
+      "name": "SetReminderIntent"
+    },
+    "locale": "en",
+    "timestamp": "2024-06-16T13:07:08Z"
+  },
+  "input": {
+    "type": "IntentRequest",
+    "intent": {
+      "name": "SetReminderIntent"
+    },
+    "entities": {}
+  }
+}

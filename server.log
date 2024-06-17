@@ -1,0 +1,22 @@
+
+> jovo-v4-template@4.0.0 start:dev
+> tsc-watch --onSuccess "node ./dist/app.dev.js --disable-jovo-debugger" --noClear
+
+
+
+----------------------
+5:34:43 PM - Starting compilation in watch mode...
+
+
+5:34:48 PM - Found 0 errors. Watching for file changes.
+Adding plugins: [ 'CorePlatform' ]
+Adding plugins: [ 'RouterPlugin', 'HandlerPlugin', 'OutputPlugin' ]
+Adding plugins: [ 'FileDb', 'JovoDebugger' ]
+Adding plugins: [ 'BasicLogging' ]
+Registered platforms: [ 'CorePlatform' ]
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (/home/ubuntu/Jarvis/node_modules/express/lib/application.js:635:24)
+    at /home/ubuntu/Jarvis/src/server.express.ts:20:11
