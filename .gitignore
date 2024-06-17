@@ -1,0 +1,25 @@
+# Ignore Android SDK and command line tools
+android-sdk/
+cmdline-tools/
+
+# Ignore Debian package files
+debian/
+debian.deb
+
+# Ignore Jarvis build artifacts
+jarvis/
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+logs/
+server.log
+
+# Ignore other development artifacts
+*.zip
+*.sh
+*.json
+*.ts
+*.js
+*.log
