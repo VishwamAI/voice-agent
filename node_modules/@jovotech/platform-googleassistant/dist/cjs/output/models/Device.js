@@ -1,0 +1,51 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Device = exports.TimeZone = exports.Capability = void 0;
+const output_1 = require("@jovotech/output");
+var Capability;
+(function (Capability) {
+    Capability["Unspecified"] = "UNSPECIFIED";
+    Capability["Speech"] = "SPEECH";
+    Capability["RichResponse"] = "RICH_RESPONSE";
+    Capability["LongFormAudio"] = "LONG_FORM_AUDIO";
+    Capability["InteractiveCanvas"] = "INTERACTIVE_CANVAS";
+    Capability["WebLink"] = "WEB_LINK";
+})(Capability = exports.Capability || (exports.Capability = {}));
+class TimeZone {
+}
+__decorate([
+    (0, output_1.IsString)(),
+    (0, output_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], TimeZone.prototype, "id", void 0);
+__decorate([
+    (0, output_1.IsOptional)(),
+    (0, output_1.IsString)(),
+    __metadata("design:type", String)
+], TimeZone.prototype, "version", void 0);
+exports.TimeZone = TimeZone;
+class Device {
+}
+__decorate([
+    (0, output_1.IsArray)(),
+    (0, output_1.IsEnum)(Capability, { each: true }),
+    __metadata("design:type", Array)
+], Device.prototype, "capabilities", void 0);
+__decorate([
+    (0, output_1.IsObject)(),
+    (0, output_1.IsOptional)(),
+    (0, output_1.ValidateNested)(),
+    (0, output_1.Type)(() => TimeZone),
+    __metadata("design:type", TimeZone)
+], Device.prototype, "timeZone", void 0);
+exports.Device = Device;
+//# sourceMappingURL=Device.js.map

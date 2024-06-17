@@ -1,0 +1,2 @@
+# Cron job to run the check_for_updates.sh script every day at 2 AM
+0 2 * * * /home/ubuntu/Jarvis/check_for_updates.sh >> /home/ubuntu/Jarvis/update_log.txt 2>&1
