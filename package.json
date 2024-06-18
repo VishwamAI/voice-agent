@@ -13,7 +13,7 @@
     "prebundle": "rimraf bundle",
     "postbundle": "cd bundle && bestzip ../bundle.zip * && cd ..",
     "bundle:dev": "npm run bundle -- src/app.dev.ts",
-    "eslint": "eslint src test --fix --ext .ts",
+    "eslint": "eslint src --fix --ext .ts",
     "build": "tsc"
   },
   "dependencies": {
