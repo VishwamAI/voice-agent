@@ -1,0 +1,61 @@
+{
+  "invocation": "my test app",
+  "version": "4.0",
+  "intents": {
+    "YesIntent": {
+      "phrases": [
+        "yes",
+        "yes please",
+        "sure"
+      ]
+    },
+    "NoIntent": {
+      "phrases": [
+        "no",
+        "no thanks"
+      ]
+    },
+    "SetReminderIntent": {
+      "phrases": [
+        "set a reminder",
+        "remind me to",
+        "create a reminder for"
+      ]
+    },
+    "PlayMusicIntent": {
+      "phrases": [
+        "play music",
+        "play some songs",
+        "start playing music"
+      ]
+    },
+    "CheckWeatherIntent": {
+      "phrases": [
+        "what's the weather",
+        "check the weather",
+        "what's the weather like"
+      ]
+    },
+    "ControlSmartHomeIntent": {
+      "phrases": [
+        "turn on the lights",
+        "turn off the lights",
+        "set the thermostat to"
+      ]
+    },
+    "OpenBrowserIntent": {
+      "phrases": [
+        "open the browser",
+        "launch the browser",
+        "start the browser"
+      ]
+    },
+    "NavigateBrowserIntent": {
+      "phrases": [
+        "go to {url}",
+        "navigate to {url}",
+        "open {url}"
+      ]
+    }
+  }
+}
