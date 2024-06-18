@@ -1,0 +1,7 @@
+{
+    "android": {
+        "gradleArgs": [
+            "-Dorg.gradle.jvmargs=-Xmx2048m"
+        ]
+    }
+}
