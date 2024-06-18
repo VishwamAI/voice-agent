@@ -1,12 +1,12 @@
-import dns from 'dns';
-import https from 'https';
+import dns from "dns";
+import https from "https";
 
 // Function to get a list of available servers
 function getServerList(): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    dns.resolve4('all.api.radio-browser.info', (err, addresses) => {
+    dns.resolve4("all.api.radio-browser.info", (err, addresses) => {
       if (err) {
-        console.error('DNS lookup failed:', err);
+        console.error("DNS lookup failed:", err);
         reject(err);
         return;
       }
@@ -23,8 +23,17 @@ function selectServer(servers: string[]): string {
   return servers[randomIndex];
 }
 
+// Define the type for radio stations
+interface RadioStation {
+  name: string;
+  url: string;
+  country: string;
+  language: string;
+  tags: string[];
+}
+
 // Function to fetch radio stations from the selected server
-function fetchRadioStations(server: string): Promise<any> {
+function fetchRadioStations(server: string): Promise<RadioStation[]> {
   return new Promise((resolve, reject) => {
     const url = `${server}/json/stations`;
 
@@ -34,24 +43,24 @@ function fetchRadioStations(server: string): Promise<any> {
 
     https
       .get(url, options, (res) => {
-        let data = '';
+        let data = "";
 
-        res.on('data', (chunk) => {
+        res.on("data", (chunk) => {
           data += chunk;
         });
 
-        res.on('end', () => {
+        res.on("end", () => {
           try {
-            const stations = JSON.parse(data);
+            const stations: RadioStation[] = JSON.parse(data);
             resolve(stations);
           } catch (error) {
-            console.error('Error parsing JSON response:', error);
+            console.error("Error parsing JSON response:", error);
             reject(error);
           }
         });
       })
-      .on('error', (err) => {
-        console.error('Error fetching radio stations:', err);
+      .on("error", (err) => {
+        console.error("Error fetching radio stations:", err);
         reject(err);
       });
   });
@@ -61,15 +70,15 @@ function fetchRadioStations(server: string): Promise<any> {
 getServerList()
   .then((servers) => {
     const selectedServer = selectServer(servers);
-    console.log('Selected server:', selectedServer);
+    console.log("Selected server:", selectedServer);
 
     return fetchRadioStations(selectedServer);
   })
   .then((stations) => {
-    console.log('Available radio stations:', stations);
+    console.log("Available radio stations:", stations);
   })
   .catch((error) => {
-    console.error('Error:', error);
+    console.error("Error:", error);
   });
 
 export { getServerList, selectServer, fetchRadioStations };
