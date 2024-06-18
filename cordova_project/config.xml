@@ -9,7 +9,7 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <hook type="after_prepare" src="hooks/after_prepare/remove_illegal_access_option_after_prepare.js" />
-    <hook type="before_build" src="hooks/before_build/010_remove_illegal_access_option.sh" />
+    <hook type="before_build" src="hooks/before_build/copy_build_extras_gradle.sh" />
     <hook type="before_compile" src="hooks/before_build/remove_illegal_access_option.js" />
     <hook type="before_run" src="hooks/before_build/remove_illegal_access_option.js" />
 </widget>

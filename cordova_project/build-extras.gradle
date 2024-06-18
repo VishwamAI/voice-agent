@@ -1,0 +1,11 @@
+// build-extras.gradle
+
+// This file is used to customize the build.gradle file without editing it directly.
+// It will be included by the main build.gradle script when present.
+
+// Exclude the --illegal-access=permit JVM option from the build process
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs.removeAll { it == '--illegal-access=permit' }
+    }
+}
