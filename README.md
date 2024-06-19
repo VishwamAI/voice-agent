@@ -1,5 +1,5 @@
 # Jarvis Voice Assistant
-
+[![CI](https://github.com/VishwamAI/voice-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/VishwamAI/voice-agent/actions/workflows/ci.yml)
 ## Overview
 Jarvis is a voice assistant built using the Jovo framework. It supports advanced voice recognition capabilities, multi-language support with a focus on Telugu, and features auto-update and auto-upgrade capabilities. The assistant is designed to be secure and maintain user privacy while providing full access to devices.
 
