@@ -2,16 +2,15 @@ interface ResponseObject {
   message: string;
 }
 
+import { BaseComponent } from "@jovotech/framework";
+import { exec } from "child_process";
 import {
   getServerList,
   selectServer,
   fetchRadioStations,
 } from "../radio_browser_service";
+import { Handle } from "@jovotech/framework";
 
-import { Component, BaseComponent, Handle } from "@jovotech/framework";
-import { exec } from "child_process";
-
-@Component()
 export class JarvisComponent extends BaseComponent {
   sendCustomResponse(response: ResponseObject) {
     this.$output.push({
@@ -56,8 +55,26 @@ export class JarvisComponent extends BaseComponent {
       "Incoming request object:",
       JSON.stringify(this.$request, null, 2)
     );
-    const latitude = "48.8566"; // Example latitude, replace with dynamic value
-    const longitude = "2.3522"; // Example longitude, replace with dynamic value
+
+    const locationEntity = this.$entities.location as {
+      latitude: string;
+      longitude: string;
+    };
+    const latitude = locationEntity && locationEntity.latitude
+        ? locationEntity.latitude
+        : "48.8566"; // Default latitude
+    const longitude = locationEntity && locationEntity.longitude
+        ? locationEntity.longitude
+        : "2.3522"; // Default longitude
+
+    if (!latitude || !longitude) {
+      return this.sendCustomResponse({
+        message: "Sorry, I could not extract the location from the request.",
+      });
+    }
+
+    console.log("Extracted latitude:", latitude);
+    console.log("Extracted longitude:", longitude);
 
     try {
       const { stdout } = await exec(
