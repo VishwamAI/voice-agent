@@ -44,8 +44,13 @@ export class JarvisComponent extends BaseComponent {
     console.log("Extracted longitude:", longitude);
 
     try {
+      const apiKey = process.env.WEATHER_API_KEY;
+      if (!apiKey) {
+        throw new Error("Weather API key is not set in environment variables.");
+      }
+
       const { stdout } = await exec(
-        `curl "http://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=${latitude},${longitude}"`
+        `curl "http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}"`
       );
       const weatherData = JSON.parse(stdout as unknown as string);
       const weatherMessage = `The current temperature in ${weatherData.location.name} is ${weatherData.current.temp_c}°C with ${weatherData.current.condition.text}.`;
