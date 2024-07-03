@@ -8,6 +8,8 @@ Jarvis is a voice assistant built using the Jovo framework. It supports advanced
 - Multi-language support (English and Telugu)
 - Auto-update and auto-upgrade capabilities
 - Robust security measures
+- Dynamic weather updates using the user's location
+- Secure management of API keys using environment variables
 
 ## Setup
 1. Clone the repository:
