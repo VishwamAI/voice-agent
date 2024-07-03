@@ -1,6 +1,6 @@
-import { app } from './app';
-import { FileDb } from '@jovotech/db-filedb';
-import { JovoDebugger } from '@jovotech/plugin-debugger';
+import { app } from "./app";
+import { FileDb } from "@jovotech/db-filedb";
+import { JovoDebugger } from "@jovotech/plugin-debugger";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,13 @@ import { JovoDebugger } from '@jovotech/plugin-debugger';
 app.configure({
   plugins: [
     new FileDb({
-      pathToFile: '../db/db.json',
+      pathToFile: "../db/db.json",
     }),
     new JovoDebugger({
-      webhookUrl: 'https://personal-voice-assistant-gxnnzccx.devinapps.com/webhook',
+      webhookUrl:
+        "https://personal-voice-assistant-gxnnzccx.devinapps.com/webhook",
     }),
   ],
 });
 
-export * from './server.express';
+export * from "./server.express";
