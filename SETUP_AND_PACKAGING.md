@@ -31,7 +31,13 @@ Compile the TypeScript source code into JavaScript:
 npm run build
 ```
 
-### 4. Run the Project in Development Mode
+### 4. Set the Weather API Key Environment Variable
+Set the `WEATHER_API_KEY` environment variable with your API key:
+```bash
+export WEATHER_API_KEY=your_api_key_here
+```
+
+### 5. Run the Project in Development Mode
 Start the Jovo app in development mode:
 ```bash
 npm run start:dev

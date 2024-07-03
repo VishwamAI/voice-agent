@@ -21,7 +21,12 @@ Jarvis is a voice assistant built using the Jovo framework. It supports advanced
    npm install
    ```
 
-3. Run the app in development mode:
+3. Set the weather API key environment variable:
+   ```bash
+   export WEATHER_API_KEY=your_api_key_here
+   ```
+
+4. Run the app in development mode:
    ```bash
    npm run start:dev
    ```
