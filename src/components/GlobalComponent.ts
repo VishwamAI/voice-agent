@@ -1,5 +1,3 @@
-import { Component, BaseComponent, Global } from "@jovotech/framework";
-
 /*
 |--------------------------------------------------------------------------
 | Global Component
@@ -9,8 +7,3 @@ import { Component, BaseComponent, Global } from "@jovotech/framework";
 | Learn more here: www.jovo.tech/docs/components#global-components
 |
 */
-@Global()
-@Component()
-export class GlobalComponent extends BaseComponent {
-  // Removed the LAUNCH method to avoid duplicate global intent error
-}
