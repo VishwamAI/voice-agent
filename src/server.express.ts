@@ -8,6 +8,8 @@ import { app } from "./app";
 import fs from "fs";
 import path from "path";
 import bodyParser from "body-parser";
+import cors from "cors";
+import rateLimit from "express-rate-limit";
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,14 @@ const logToFile = (message: string) => {
 
   await app.initialize();
   Webhook.use(bodyParser.json()); // Add body-parser middleware to parse JSON payloads
+  Webhook.use(cors()); // Add CORS middleware to allow cross-origin requests
+
+  // Add rate limiting middleware to limit the number of requests
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+  });
+  Webhook.use(limiter);
 
   Webhook.get("/webhook", async (req: Request, res: Response) => {
     const logMessage = `Incoming GET request: ${JSON.stringify(req.query)}`;
