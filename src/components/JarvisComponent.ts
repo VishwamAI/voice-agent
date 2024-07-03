@@ -24,13 +24,15 @@ export class JarvisComponent extends BaseComponent {
       longitude: string;
     };
 
-    const latitude = locationEntity && locationEntity.latitude
-      ? locationEntity.latitude
-      : "48.8566"; // Default latitude
+    const latitude =
+      locationEntity && locationEntity.latitude
+        ? locationEntity.latitude
+        : "48.8566"; // Default latitude
 
-    const longitude = locationEntity && locationEntity.longitude
-      ? locationEntity.longitude
-      : "2.3522"; // Default longitude
+    const longitude =
+      locationEntity && locationEntity.longitude
+        ? locationEntity.longitude
+        : "2.3522"; // Default longitude
 
     if (!latitude || !longitude) {
       return this.sendCustomResponse({
