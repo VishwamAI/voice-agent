@@ -1,15 +1,13 @@
+import { BaseComponent, Handle } from "@jovotech/framework";
 interface ResponseObject {
   message: string;
 }
-
-import { BaseComponent } from "@jovotech/framework";
 import { exec } from "child_process";
 import {
   getServerList,
   selectServer,
   fetchRadioStations,
 } from "../radio_browser_service";
-import { Handle } from "@jovotech/framework";
 
 export class JarvisComponent extends BaseComponent {
   sendCustomResponse(response: ResponseObject) {
