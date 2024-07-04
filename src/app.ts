@@ -116,8 +116,14 @@ app.hook("after.platform.init", (handleRequest) => {
       RouterPlugin: { metadataStorage: InstanceType<typeof MetadataStorage> };
     }
   ).RouterPlugin;
-  console.log("Handler metadata:", routerPlugin.metadataStorage.handlerMetadata);
-  console.log("Component metadata:", routerPlugin.metadataStorage.componentMetadata);
+  console.log(
+    "Handler metadata:",
+    routerPlugin.metadataStorage.handlerMetadata
+  );
+  console.log(
+    "Component metadata:",
+    routerPlugin.metadataStorage.componentMetadata
+  );
 
   console.log(
     "Registered platforms after init:",

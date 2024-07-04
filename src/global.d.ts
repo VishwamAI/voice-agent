@@ -1,1 +1,1 @@
-declare module '@jovotech/framework/dist/cjs/metadata/MetadataStorage';
+declare module "@jovotech/framework/dist/cjs/metadata/MetadataStorage";
